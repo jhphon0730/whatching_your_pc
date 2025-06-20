@@ -2,9 +2,8 @@
 
 import { useState, useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Monitor, Users, X } from "lucide-react"
+import { Monitor, X } from "lucide-react"
 import ScreenShare from "./screen-share"
 
 interface Message {
@@ -29,7 +28,7 @@ export default function RoomView({ socket, roomId, userId, instanceId, fullUserI
   const [users, setUsers] = useState<string[]>([])
   const [displayUsers, setDisplayUsers] = useState<{ id: string; displayId: string }[]>([])
   const [messages, setMessages] = useState<Message[]>([])
-  const [activeTab, setActiveTab] = useState("screen")
+  const [_, setActiveTab] = useState("screen")
   const [currentSharer, setCurrentSharer] = useState<string | null>(null)
   const processedJoinMessages = useRef(new Set<string>())
   const joinedRef = useRef(false)

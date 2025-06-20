@@ -98,7 +98,7 @@ export default function ScreenShare({
     }
 
     // Close all peer connections
-    peerConnectionsRef.current.forEach((pc, userId) => {
+    peerConnectionsRef.current.forEach((pc, _) => {
       pc.close()
     })
     peerConnectionsRef.current.clear()

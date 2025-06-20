@@ -12,6 +12,10 @@ func main() {
 	go hub.Run()
 
 	r := gin.Default()
+
+	// production mode
+	gin.SetMode(gin.ReleaseMode)
+
 	r.GET("/ws", func(c *gin.Context) {
 		ServeWs(hub, c.Writer, c.Request)
 	})
