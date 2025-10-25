@@ -104,4 +104,5 @@ type Message struct {
 	Sender     string      `json:"sender"`
 	Target     string      `json:"target,omitempty"`
 	InstanceId string      `json:"instanceId,omitempty"`
+	CurrentPCInfo string `json:"currentPCInfo"`
 }
