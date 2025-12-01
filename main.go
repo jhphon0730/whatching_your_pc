@@ -19,6 +19,6 @@ func main() {
 	r.GET("/ws", func(c *gin.Context) {
 		ServeWs(hub, c.Writer, c.Request)
 	})
-	log.Println("✅ WebSocket 서버 시작 :8080")
+	log.Println("WebSocket 서버 시작 :8080")
 	r.Run(":8080")
 }
